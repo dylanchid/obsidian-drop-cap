@@ -22,7 +22,7 @@ export const DEFAULT_SETTINGS: DropCapSettings = {
 	fontWeight: 700,
 	colorMode: 'inherit',
 	customColor: '#000000',
-	frontmatterControl: false,
+	frontmatterControl: true,
 };
 
 // Maps lineSpan to a computed font-size (em) tuned for Obsidian's default 1.5 line-height

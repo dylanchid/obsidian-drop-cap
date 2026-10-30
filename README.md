@@ -1,10 +1,12 @@
 # Drop Cap
 
-Adds stylized drop cap letters to the first paragraph of your notes.
+Add a stylized drop cap to the first paragraph of a note.
 
 ## Use
 
-In **Settings → Drop Cap**, choose automatic mode to style the opening paragraph of each note, or manual mode to style only a letter marked with `{A}` syntax. Use **Wrap character as drop cap** or the editor context menu to insert the marker. **Toggle drop cap for this note** adds or removes `drop_cap: false` in the note's frontmatter.
+In **Settings → Drop Cap**, choose automatic mode to style the opening paragraph of each note, or manual mode to style only a letter marked with `{A}` syntax. Use **Wrap character as drop cap** or the editor context menu to insert the marker.
+
+**Toggle drop cap for this note** adds or removes `drop_cap: false` in the note's frontmatter. That property takes effect when **Respect frontmatter** is enabled (it is on by default). With the setting off, the plugin ignores `drop_cap` on every note.
 
 ## Install manually
 

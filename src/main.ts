@@ -23,7 +23,7 @@ export default class DropCapPlugin extends Plugin {
 
 		// Slash-command / command palette: wrap the character at the cursor with {}
 		this.addCommand({
-			id: 'wrap-drop-cap',
+			id: 'wrap-character',
 			name: 'Wrap character as drop cap',
 			editorCallback: (editor: Editor) => {
 				const cursor = editor.getCursor();
@@ -108,7 +108,8 @@ export default class DropCapPlugin extends Plugin {
 		if (!this.settings.enabled) return;
 
 		if (this.settings.frontmatterControl) {
-			const fm = ctx.frontmatter as Record<string, unknown> | undefined;
+			const cache = this.app.metadataCache.getCache(ctx.sourcePath);
+			const fm = (ctx.frontmatter ?? cache?.frontmatter) as Record<string, unknown> | undefined;
 			if (fm?.['drop_cap'] === false) return;
 		}
 
