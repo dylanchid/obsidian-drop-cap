@@ -22,7 +22,6 @@ export class DropCapSettingTab extends PluginSettingTab {
 	display(): void {
 		const { containerEl } = this;
 		containerEl.empty();
-		containerEl.createEl('h2', { text: 'Drop Cap' });
 
 		this.buildGeneralSection(containerEl);
 		this.buildAppearanceSection(containerEl);
@@ -63,7 +62,7 @@ export class DropCapSettingTab extends PluginSettingTab {
 	}
 
 	private buildAppearanceSection(el: HTMLElement): void {
-		el.createEl('h3', { text: 'Appearance' });
+		new Setting(el).setName('Appearance').setHeading();
 
 		new Setting(el)
 			.setName('Font family')
@@ -146,7 +145,7 @@ export class DropCapSettingTab extends PluginSettingTab {
 	}
 
 	private buildBehaviorSection(el: HTMLElement): void {
-		el.createEl('h3', { text: 'Behavior' });
+		new Setting(el).setName('Behavior').setHeading();
 
 		new Setting(el)
 			.setName('Respect frontmatter')
@@ -162,7 +161,7 @@ export class DropCapSettingTab extends PluginSettingTab {
 	}
 
 	private buildActionsSection(el: HTMLElement): void {
-		el.createEl('h3', { text: 'Actions' });
+		new Setting(el).setName('Actions').setHeading();
 
 		new Setting(el)
 			.setName('Refresh open notes')
