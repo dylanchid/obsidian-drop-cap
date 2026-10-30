@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-drop-cap",
+	"name": "Drop Cap",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Adds stylized drop cap letters to the first paragraph of your notes.",
+	"author": "Dylan Chidambaram",
+	"authorUrl": "",
+	"isDesktopOnly": false
+}

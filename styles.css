@@ -1,0 +1,34 @@
+/* ── Drop Cap Letter ──────────────────────────────────────────────── */
+
+.drop-cap-letter {
+	/* Float left so body text wraps around the letter */
+	float: left;
+
+	/* Vertical alignment: 0.85 line-height pushes the cap top flush with
+	   the first line's cap-height, matching classic typographic drop caps */
+	line-height: 0.85;
+
+	/* Breathing room between the letter and the wrapped text */
+	margin-right: 0.06em;
+
+	/* Nudge down slightly so the cap aligns with the ascender of the first line */
+	margin-top: 0.05em;
+
+	/* font-size is injected inline by JS (LINE_SPAN_SIZES) */
+	/* font-family, font-weight, color are also injected inline by JS    */
+
+	/* Prevent text selection quirks when double-clicking near the cap */
+	user-select: none;
+}
+
+/* ── Contain the float inside its paragraph ──────────────────────── */
+/*
+   display: flow-root creates a new Block Formatting Context, which
+   causes the <p> to grow tall enough to contain its floated child.
+   Without this the drop cap can bleed below a short paragraph.
+*/
+.markdown-preview-view p:has(.drop-cap-letter),
+.markdown-rendered p:has(.drop-cap-letter),
+.markdown-embed p:has(.drop-cap-letter) {
+	display: flow-root;
+}
